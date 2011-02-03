@@ -22,6 +22,6 @@
     <detail>
         <thumbnail name="preview">preview.jpg</thumbnail>
         <description>blootube-ng is a theme based on the original blootube-wide by Justin Hornsby (justin.hornsby@gmail.com) which uses very large graphics associated with every menu entry. All changes where made to bring this theme forward to MythTV 0.24.</description>
-        <errata>Most plugins are not themed.</errata>
+        <errata>N/A</errata>
     </detail>
 </themeinfo>
