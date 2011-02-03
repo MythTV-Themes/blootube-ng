@@ -1,0 +1,239 @@
+<mythuitheme>
+
+   <fontdef name="basesmall" face="Bitstream Vera Sans">
+       <color>#FFFFFF</color>
+       <pixelsize>20</pixelsize>
+       <weight>bold</weight>
+   </fontdef>
+   
+   <fontdef name="basemedium" face="Bitstream Vera Sans">
+       <color>#FFFFFF</color>
+       <pixelsize>26</pixelsize>
+       <weight>bold</weight>
+   </fontdef>
+
+   <fontdef name="basemediumgray" from="basemedium">
+       <color>#b3b3b3</color>
+   </fontdef>
+   
+
+   <fontdef name="baselarge" face="Bitstream Vera Sans">
+       <color>#FFFFFF</color>
+       <pixelsize>30</pixelsize>
+       <weight>bold</weight>
+   </fontdef>
+
+
+   <button name="basebutton">
+        <statetype name="buttonstate">
+            <state name="active">
+                <imagetype name="background">
+		    <area>0,0,153,30</area>
+                    <filename>buttons/button_background.png</filename>
+                </imagetype>
+                <textarea name="text">
+                    <area>5,0,140,30</area>
+                    <align>allcenter</align>
+                    <font>basesmall</font>
+                    <font state="selected">basemedium</font>
+                    <font state="disabled">basemediumgrey</font>
+                </textarea>
+            </state>
+            <state name="selected" from="active">
+                <imagetype name="background">
+                    <filename>button_on.png</filename>
+                </imagetype>
+            </state>
+            <state name="disabled" from="active" />
+            <state name="pushed" from="active" />
+        </statetype>
+    </button>
+    
+   
+    <buttonlist name="basebuttonlist">
+	<area>0,0,394,250</area>
+	<scrollstyle>center</scrollstyle>
+	<wrapstyle>items</wrapstyle>
+	<buttonarea>0,0,100%,100%</buttonarea>
+	<statetype name="buttonitem">
+	    <state name="active">
+		<area>0,0,394,34</area>
+		<imagetype name="selectbar">
+		    <area>0,0,394,34</area>
+		    <filename>tvplayback/tv-selectbar.png</filename>
+		    <position>-5,0</position>
+		    <alpha>0</alpha>
+		</imagetype>
+		<textarea name="buttontext">
+		    <area>5,0,95%,34</area>
+		    <font>basesmall</font>
+		    <cutdown>yes</cutdown>
+		    <align>vcenter</align>
+		</textarea>
+		<statetype name="buttoncheck">
+		    <position>91%,5</position>
+		    <state type="off">
+			<imagetype name="checkoff">
+			    <filename>lb-check-empty.png</filename>
+			</imagetype>
+		    </state>
+		    <state type="half">
+			<imagetype name="checkhalf">
+			    <filename>lb-check-half.png</filename>
+			</imagetype>
+		    </state>
+		    <state type="full">
+			<imagetype name="checkfull">
+			    <filename>lb-check-full.png</filename>
+			</imagetype>
+		    </state>
+		</statetype>
+		<imagetype name="buttonarrow">
+		    <position>94%,7</position>
+		    <filename>lb-arrow.png</filename>
+		</imagetype>
+	    </state>
+	    <state name="selectedactive" from="active">
+		<imagetype name="selectbar">
+		    <alphapulse min="50" max="250" change="1"/>
+		</imagetype>
+	    </state>
+	    <state name="selectedinactive" from="active">
+		<imagetype name="selectbar">
+		    <alpha>50</alpha>
+		</imagetype>                
+	    </state>
+	</statetype>
+	<statetype name="upscrollarrow">
+	    <state type="off">
+		<imagetype name="up">
+		    <filename>shared/uparrow.png</filename>
+		    <alpha>30</alpha>
+		</imagetype>
+	    </state>
+	    <state type="full" from="off">
+		<imagetype name="up">
+		    <alpha>250</alpha>
+		</imagetype>
+	    </state>
+	    <position>-30,0</position>
+	</statetype>
+	<statetype name="downscrollarrow">
+	    <state type="off">
+		<imagetype name="down">
+		    <filename>shared/downarrow.png</filename>
+		    <alpha>30</alpha>
+		</imagetype>
+	    </state>
+	    <state type="full" from="off">
+		<imagetype name="down">
+		    <alpha>250</alpha>
+		</imagetype>
+	    </state>
+	    <position>-30,30</position>
+	</statetype>
+    </buttonlist>
+    
+   
+    <imagetype name="baseselectbar">
+	<position>-5,-2</position>
+	<filename>tvplayback/tv-lbox.png</filename>
+	<alpha>0</alpha>
+    </imagetype>
+
+
+<imagetype name="baseselectbarwide">
+	<position>-5,-5</position>
+	<filename>tvplayback/tv-selectbar.png</filename>
+	<alpha>0</alpha>
+</imagetype>
+
+   <!-- Base definition of a textarea -->
+   <textarea name="basetextarea">
+       <area>0,0,10,10</area>
+       <font>basesmall</font>
+       <multiline>no</multiline>
+       <align>left</align>
+   </textarea>
+
+
+   <window name="MythBusyDialog">
+       <area>-1,-1,580,165</area>
+       <imagetype name="backimg">
+	   <filename>buttons/busy_background.png</filename>
+       </imagetype>
+       <imagetype name="animation">
+	   <position>30,30</position>
+	   <filepattern low="0" high="24">busyimages/%1.png</filepattern>
+	   <delay>250</delay>
+       </imagetype>
+       <textarea name="message" from="basetextarea">
+	   <area>170,20,390,125</area>
+	   <align>allcenter</align>
+       </textarea>
+   </window>
+
+
+
+   <buttonlist name="basepopuplist">
+       <area>10,105,470,400</area>
+       <buttonarea>0,0,100%,100%</buttonarea>
+       <drawfrombottom>yes</drawfrombottom>
+       <showarrow>no</showarrow>
+       <statetype name="buttonitem">
+	   <state name="active">
+	       <area>0,0,470,34</area>
+	       <imagetype name="selectbar">
+		   <area>0,0,470,34</area>
+		   <filename>tvplayback/tv-selectbar.png</filename>
+		   <position>0,0</position>
+		   <alpha>0</alpha>
+	       </imagetype>
+	       <textarea name="buttontext">
+		   <area>0,0,100%,34</area>
+		   <align>allcenter</align>
+		   <font>basesmall</font>
+	       </textarea>
+	   </state>
+	   <state name="selectedinactive" from="active">
+	       <imagetype name="selectbar">
+		   <alpha>50</alpha>
+	       </imagetype>     
+	   </state>
+	   <state name="selectedactive" from="active">
+	       <imagetype name="selectbar">
+		   <alphapulse min="50" max="250" change="1"/>
+	       </imagetype>
+	   </state>
+       </statetype>
+   </buttonlist>
+
+   <textarea name="basemessagearea" from="basetextarea">
+       <area>5,5,490,100</area>
+       <multiline>yes</multiline>
+       <align>allcenter</align>
+   </textarea>
+   
+   
+   <imagetype name="basepopupbackground">
+       <filename>buttons/popup_background.png</filename>
+   </imagetype>
+
+   <!-- Popup Dialogue Box -->
+   <window name="MythPopupBox">
+       <area>-1,-1,500,500</area>
+       <imagetype name="background" from="basepopupbackground" />
+       <textarea name="messagearea" from="basemessagearea" />
+       <buttonlist name="list" from="basepopuplist" />
+   </window>
+
+
+
+<window name="backgroundwindow">
+    <imagetype name="backimg">
+      <filename>background.png</filename>
+    </imagetype>
+</window>
+
+</mythuitheme>
+

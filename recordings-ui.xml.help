@@ -1,0 +1,650 @@
+<mythuitheme>
+<!--  
+This XML file defines the Window that enables the user to watch a recorded program.
+-->
+    <window name="watchrecordings">
+<!--  
+blootube uses one large background image to draw all widgets on top
+-->
+        <imagetype name="background">
+            <filename>pl-background.png</filename>
+            <position>0,0</position>
+        </imagetype>
+
+        <imagetype name="fanart">
+            <area>0,0,1280,720</area>
+            <filename />
+            <mask>pl-background-mask.png</mask>
+        </imagetype>	
+	
+
+<!--        <imagetype name="transparency">
+            <filename>pl-background-contrast.png</filename>
+            <position>0,0</position>
+        </imagetype>
+-->     
+        <textarea name="pagetitle" from="basetextarea">
+            <area>450,5,570,40</area>
+            <font>baselarge</font>
+            <value>Watch Recordings</value>
+        </textarea>
+
+<!--  
+This is the left side of the selections. It shows the groups that are available to the user.
+-->
+        <buttonlist name="groups">
+            <area>0,60,380,380</area>
+            <buttonarea>20,0,380,380</buttonarea>
+            <spacing>4</spacing>
+            <scrollstyle>center</scrollstyle>
+            <wrapstyle>items</wrapstyle>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="name">
+                        <area>5,0,380,30</area>
+                        <font>basesmall</font>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+                <state name="inactive" from="active">
+                    <textarea name="name">
+                        <area>5,0,380,30</area>
+                        <font>baselarge</font>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+                <state name="selected" from="active">
+                    <textarea name="name">
+                        <area>5,0,380,30</area>
+                        <font>baselarge</font>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+
+<!--  
+This is the right side of the selections. It shows the recordings that are available to the user.
+-->
+
+        <buttonlist name="recordings" from="basebuttonlist2">
+            <area>430,60,40,380</area>
+            <buttonarea>0,0,0,380</buttonarea>
+            <wrapstyle>captive</wrapstyle>
+	                <spacing>5</spacing>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="titlesubtitle" from="buttontext">
+                        <area>40,0,600,30</area>
+                    </textarea>
+                    <textarea name="shortdate" from="titlesubtitle">
+                        <area>608,0,100,30</area>
+                        <align>right</align>
+                    </textarea>
+                    <textarea name="starttime" from="shortdate">
+                        <area>718,0,80,30</area>
+                        <align>right</align>
+                    </textarea>
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <position>5,0</position>
+                                <filename>type/watched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlistyes">
+                                <position>15,0</position>
+                                <filename>playlist_yes.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no" />
+                    </statetype>
+                </state>
+                <state name="inactive" from="active" />
+                <state name="selected" from="active">
+                <imagetype name="selectbar">
+                    <position>0,-3</position>
+                    <filename>tvplayback/tv-selectbar-transparent.png</filename>
+                </imagetype>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>800,-20</position>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>800,360</position>
+            </statetype>
+        </buttonlist>
+
+
+<!--  
+These are the icons used to show metadata like "Surround" or "Subtitles" of a show
+-->
+        <imagetype name="autoexpire">
+            <filename>type/autoexpire.png</filename>
+            <position>748,500</position>
+        </imagetype>
+
+        <imagetype name="commflagged">
+            <filename>type/commflagged.png</filename>
+            <position>782,500</position>
+        </imagetype>
+
+        <imagetype name="bookmark">
+            <filename>type/bookmark.png</filename>
+            <position>816,500</position>
+        </imagetype>
+
+        <imagetype name="cutlist">
+            <filename>type/cutlist.png</filename>
+            <position>850,500</position>
+        </imagetype>
+
+        <statetype name="audioprops">
+            <position>748,540</position>
+            <showempty>yes</showempty>
+            <state name="stereo">
+                <imagetype name="stereo">
+                    <filename>type/stereo.png</filename>
+                </imagetype>
+            </state>
+            <state name="surround">
+                <imagetype name="surround">
+                    <filename>type/surround.png</filename>
+                </imagetype>
+            </state>
+            <state name="dolby">
+                <imagetype name="dolby">
+                    <filename>type/dd.png</filename>
+                </imagetype>
+            </state>
+            <state name="mono">
+                <imagetype name="mono">
+                    <filename>type/mono.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <statetype name="subtitletypes">
+            <position>882,540</position>
+            <showempty>yes</showempty>
+            <state name="cc">
+                <imagetype name="cc">
+                    <filename>type/cc.png</filename>
+                </imagetype>
+            </state>
+            <state name="subtitles">
+                <imagetype name="subtitles">
+                    <filename>type/subs.png</filename>
+                </imagetype>
+            </state>
+            <state name="onscreensub">
+                <imagetype name="onscreensub">
+                    <filename>type/subs_onscreen.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <statetype name="videoprops">
+            <position>816,540</position>
+            <showempty>yes</showempty>
+            <state name="hdtv">
+                <imagetype name="hdtv">
+                    <filename>type/hd.png</filename>
+                </imagetype>
+            </state>
+            <state name="widescreen">
+                <imagetype name="widescreen">
+                    <filename>type/wide.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+<!--        <imagetype name="watched">
+            <filename>watched.png</filename>
+            <position>716,500</position>
+        </imagetype>-->
+
+        <imagetype name="processing">
+            <filename>type/processing.png</filename>
+            <position>850,540</position>
+        </imagetype>
+
+
+	
+<!--  
+The title of a show
+-->
+        <textarea name="title" from="basetextarea">
+            <area>25,465,700,40</area>
+            <font>baselarge</font>
+            <cutdown>yes</cutdown>
+            <align>vcenter</align>
+        </textarea>
+
+<!--  
+Channel the recording was made on...
+-->
+        <textarea name="channel" from="basetextarea">
+            <area>748,580,190,30</area>
+	    <cutdown>yes</cutdown>
+        </textarea>
+
+<!--  
+Time and date of the recording
+-->
+        <textarea name="timedate" from="basetextarea">
+             <area>748,620,190,90</area>
+             <multiline>yes</multiline>
+        </textarea>
+
+<!--  
+the description field, that in this case fuses subtitle + rating + description into one
+-->
+        <textarea name="description" from="basetextarea">
+            <area>25,520,690,175</area>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <value>%|"SUBTITLE|"% %STARS% %DESCRIPTION%</value>
+        </textarea>
+
+<!--  
+The little screenshot/preview of the recording
+-->
+        <imagetype name="preview">
+            <area>900,465,379,284</area>
+            <preserveaspect>true</preserveaspect>
+<!--	    <reflection axis="vertical" shear="30" scale="75" length="35"/> -->
+        </imagetype>
+
+<!-- 
+The banner on top of the preview
+ -->
+
+        <imagetype name="banner">
+            <area>900,463,379,70</area>
+            <filename />
+            <mask>bannergray.png</mask> 
+        </imagetype>
+
+<!--  
+a text that states the obvious: there are no recordings in that group
+-->
+        <textarea name="norecordings">
+            <area>430,75,760,300</area>
+            <font>basemedium</font>
+            <value>
+            </value>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+    </window>
+
+    <window name="groupselector">
+        <area>-1,-1,500,500</area>
+        <imagetype name="backimg">
+            <filename>mythdialogbox-background.png</filename>
+        </imagetype>
+
+        <textarea name="label" from="basetextarea">
+            <area>12,35,470,30</area>
+            <align>allcenter</align>
+            <font>basemedium</font>
+        </textarea>
+
+        <buttonlist name="groups" from="basebuttonlist">
+            <area>12,80,470,400</area>
+            <showarrow>no</showarrow>
+        </buttonlist>
+    </window>
+
+    <window name="changeview">
+        <area>-1,-1,500,500</area>
+        <imagetype name="backimg">
+            <filename>mythdialogbox-background.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="basetextarea">
+            <area>12,35,470,30</area>
+            <align>allcenter</align>
+            <font>basemedium</font>
+            <value>Change View</value>
+        </textarea>
+
+        <checkbox name="titles" from="basecheckbox">
+            <position>90,100</position>
+        </checkbox>
+
+        <textarea name="titlelabel" from="basetextarea">
+            <area>140,100,300,30</area>
+            <value>Show Titles</value>
+        </textarea>
+
+        <checkbox name="categories" from="basecheckbox">
+            <position>90,150</position>
+        </checkbox>
+
+        <textarea name="catlabel" from="titlelabel">
+            <position>140,150</position>
+            <value>Show Categories</value>
+        </textarea>
+
+        <checkbox name="recgroups" from="basecheckbox">
+            <position>90,200</position>
+        </checkbox>
+
+        <textarea name="grouplabel" from="titlelabel">
+            <position>140,200</position>
+            <value>Show Recording Groups</value>
+        </textarea>
+
+        <checkbox name="watchlist" from="basecheckbox">
+            <position>90,250</position>
+        </checkbox>
+
+        <textarea name="watchlabel" from="titlelabel">
+            <position>140,250</position>
+            <value>Show Watch List</value>
+        </textarea>
+
+        <checkbox name="searches" from="basecheckbox">
+            <position>90,300</position>
+        </checkbox>
+
+        <textarea name="searchlabel" from="titlelabel">
+            <position>140,300</position>
+            <value>Show Searches</value>
+        </textarea>
+
+        <checkbox name="livetv" from="basecheckbox">
+            <position>90,350</position>
+        </checkbox>
+
+        <textarea name="livelabel" from="titlelabel">
+            <position>140,350</position>
+            <value>Show LiveTV</value>
+        </textarea>
+
+        <button name="save" from="basebutton">
+            <position>315,435</position>
+            <value>Save</value>
+        </button>
+    </window>
+
+    <window name="passwordchanger">
+        <area>-1,-1,500,500</area>
+
+        <imagetype name="backimg">
+            <filename>mythdialogbox-background.png</filename>
+        </imagetype>
+
+        <textarea name="label" from="basetextarea">
+            <area>12,15,470,160</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>Change Recording Group Password</value>
+        </textarea>
+
+        <textarea name="oldpasslabel" from="basetextarea">
+            <area>58,180,300,30</area>
+            <value>Old Password:</value>
+        </textarea>
+
+        <textedit name="oldpassword" from="basetextedit">
+            <position>58,210</position>
+        </textedit>
+
+        <textarea name="newpasslabel" from="basetextarea">
+            <area>58,310,300,30</area>
+            <value>New Password:</value>
+        </textarea>
+
+        <textedit name="newpassword" from="basetextedit">
+            <position>58,340</position>
+        </textedit>
+
+        <button name="ok" from="basebutton">
+            <position>175,435</position>
+            <value>OK</value>
+        </button>
+    </window>
+
+    <window name="editmetadata">
+        <area>-1,-1,500,500</area>
+
+        <imagetype name="backimg">
+            <filename>mythdialogbox-background.png</filename>
+        </imagetype>
+
+        <textarea name="label" from="basetextarea">
+            <area>12,15,470,160</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>Edit Recording Metadata</value>
+        </textarea>
+
+        <textarea name="titlelabel" from="basetextarea">
+            <area>58,180,300,30</area>
+            <value>Title:</value>
+        </textarea>
+
+        <textedit name="title" from="basetextedit">
+            <position>58,210</position>
+        </textedit>
+
+        <textarea name="subtitlelabel" from="basetextarea">
+            <area>58,310,300,30</area>
+            <value>Subtitle:</value>
+        </textarea>
+
+        <textedit name="subtitle" from="basetextedit">
+            <position>58,340</position>
+        </textedit>
+
+        <button name="ok" from="basebutton">
+            <position>175,435</position>
+            <value>OK</value>
+        </button>
+    </window>
+
+    <window name="help_popup">
+        <area>-1,-1,500,500</area>
+
+        <textarea name="title" from="basetextarea">
+            <area>20,20,360,260</area>
+            <value>Status Icons</value>
+            <font>basemedium</font>
+            <align>center</align>
+        </textarea>
+
+        <imagetype name="commflagged">
+            <position>20,20</position>
+            <filename>type/commflagged.png</filename>
+        </imagetype>
+
+        <textarea name="commflagged_label" from="basetextarea">
+            <area>60,y,200,40</area>
+            <value>Commercials are flagged</value>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <imagetype name="cutlist">
+            <position>20,20</position>
+            <filename>type/cutlist.png</filename>
+        </imagetype>
+
+        <textarea name="cutlist_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>An editing cutlist is present</value>
+        </textarea>
+
+        <imagetype name="autoexpire">
+            <position>20,20</position>
+            <filename>type/autoexpire.png</filename>
+        </imagetype>
+
+        <textarea name="autoexpire_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>The program is able to auto-expire</value>
+        </textarea>
+
+        <imagetype name="processing">
+            <position>20,20</position>
+            <filename>type/processing.png</filename>
+        </imagetype>
+
+        <textarea name="processing_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Commercials are being flagged</value>
+        </textarea>
+
+        <imagetype name="bookmark">
+            <position>20,20</position>
+            <filename>type/bookmark.png</filename>
+        </imagetype>
+
+        <textarea name="bookmark_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>A bookmark is set</value>
+        </textarea>
+
+        <imagetype name="inuse">
+            <position>20,20</position>
+            <filename>type/inuse.png</filename>
+        </imagetype>
+
+        <textarea name="inuse_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is in use</value>
+        </textarea>
+
+        <imagetype name="transcoded">
+            <position>20,20</position>
+            <filename>type/transcoded.png</filename>
+        </imagetype>
+
+        <textarea name="transcoded_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording has been transcoded</value>
+        </textarea>
+
+        <imagetype name="mono">
+            <position>20,20</position>
+            <filename>type/mono.png</filename>
+        </imagetype>
+
+        <textarea name="mono_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is in Mono</value>
+        </textarea>
+
+        <imagetype name="stereo">
+            <position>20,20</position>
+            <filename>type/stereo.png</filename>
+        </imagetype>
+
+        <textarea name="stereo_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is in Stereo</value>
+        </textarea>
+
+        <imagetype name="surround">
+            <position>20,20</position>
+            <filename>metadata_icons/surround.png</filename>
+        </imagetype>
+
+        <textarea name="surround_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is in Surround Sound</value>
+        </textarea>
+
+        <imagetype name="dolby">
+            <position>20,20</position>
+            <filename>dd.png</filename>
+        </imagetype>
+
+        <textarea name="dolby_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is in Dolby Surround Sound</value>
+        </textarea>
+
+        <imagetype name="cc">
+            <position>20,20</position>
+            <filename>type/closedcaption.png</filename>
+        </imagetype>
+
+        <textarea name="cc_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is Closed Captioned</value>
+        </textarea>
+
+        <imagetype name="subtitles">
+            <position>20,20</position>
+            <filename>type/subtitles.png</filename>
+        </imagetype>
+
+        <textarea name="subtitles_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording has Subtitles Available</value>
+        </textarea>
+
+        <imagetype name="onscreensub">
+            <position>20,20</position>
+            <filename>type/onscreensub.png</filename>
+        </imagetype>
+
+        <textarea name="onscreensub_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is Subtitled</value>
+        </textarea>
+
+        <imagetype name="hdtv">
+            <position>20,20</position>
+            <filename>type/hdtv.png</filename>
+        </imagetype>
+
+        <textarea name="hdtv_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is in High Definition</value>
+        </textarea>
+
+        <imagetype name="widescreen">
+            <position>20,20</position>
+            <filename>type/widescreen.png</filename>
+        </imagetype>
+
+        <textarea name="widescreen_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is in WideScreen</value>
+        </textarea>
+
+        <imagetype name="watched">
+            <position>20,20</position>
+            <filename>type/watched.png</filename>
+        </imagetype>
+
+        <textarea name="watched_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording has been watched</value>
+        </textarea>
+
+        <imagetype name="preserved">
+            <position>20,20</position>
+            <filename>type/preserved.png</filename>
+        </imagetype>
+
+        <textarea name="preserved_label" from="commflagged_label">
+            <position>60,y</position>
+            <value>Recording is preserved</value>
+        </textarea>
+
+    </window>
+
+</mythuitheme>
