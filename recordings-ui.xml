@@ -34,10 +34,10 @@
 	    <state name="active">
 	      <area>0,0,256,30</area>
 	      <shape name="background1" from="baseshapebackground">
-		<alpha>0</alpha>
+		<fill alpha="0" />
 	      </shape>
 	      <shape name="background2" from="baseshapetopreflection">
-		<alpha>0</alpha>
+		<fill alpha="0" />
 	      </shape>
 	      <textarea name="buttontext">
 		<area>0,0,95%,30</area>
@@ -48,10 +48,10 @@
 	    </state>
 	    <state name="selectedinactive" from="active">
 	      <shape name="background1" from="baseshapebackground">
-		<alpha>200</alpha>
+		<fill alpha="200" />
 	      </shape>
 	      <shape name="background2" from="baseshapetopreflection">
-		<alpha>200</alpha>
+		<fill alpha="200" />
 	      </shape>        
 	    </state>
 	  </statetype>
@@ -74,10 +74,10 @@
 	    <state name="active">
 	      <area>0,0,396,34</area>
 	      <shape name="background1" from="baseshapebackground">
-		<alpha>0</alpha>
+		<fill alpha="0" />
 	      </shape>
 	      <shape name="background2" from="baseshapetopreflection">
-		<alpha>0</alpha>
+		<fill alpha="0" />
 	      </shape>
 	      <textarea name="buttontext">
 		<area>8,0,380,34</area>
@@ -88,10 +88,10 @@
 	    </state>
 	    <state name="selectedinactive" from="active">
 	      <shape name="background1" from="baseshapebackground">
-		<alpha>50</alpha>
+		<fill alpha="50" />
 	      </shape>
 	      <shape name="background2" from="baseshapetopreflection">
-		<alpha>50</alpha>
+		<fill alpha="50" />
 	      </shape>               
 	    </state>
 	    <state name="selectedactive" from="active">
@@ -107,7 +107,7 @@
 	    <state type="off">
 	      <imagetype name="up">
 		<filename>shared/uparrow.png</filename>
-		<alpha>30</alpha>
+		<fill alpha="30" />
 	      </imagetype>
 	    </state>
 	    <state type="full" from="off">
@@ -121,7 +121,7 @@
 	    <state type="off">
 	      <imagetype name="down">
 		<filename>shared/downarrow.png</filename>
-		<alpha>30</alpha>
+		<fill alpha="30" />
 	      </imagetype>
 	    </state>
 	    <state type="full" from="off">
@@ -142,13 +142,13 @@
 	    <state name="active">
 	      <area>0,0,832,34</area>
 	      <shape name="background1" from="baseshapebackground">
-		<alpha>0</alpha>
+		<fill alpha="0" />
 	      </shape>
 	      <shape name="background2" from="baseshapetopreflection">
-		<alpha>0</alpha>
+		<fill alpha="0" />
 	      </shape>
 	      <textarea name="titlesubtitle">
-		<area>8,0,575,34</area>
+		<area>8,0,475,34</area>
 		<font>basesmall</font>
 		<cutdown>yes</cutdown>
 		<align>vcenter</align>
@@ -158,6 +158,10 @@
 		<font state="normal">basesmall</font>
 		<font state="running">basesmallgreen</font>
 	      </textarea>
+              <textarea name="00x00" from="titlesubtitle">
+                <area>475,0,100,34</area>
+                <template>%00x00%</template>
+              </textarea>
 	      <textarea name="shortdate" from="titlesubtitle">
 		<area>580,0,100,34</area>
 		<align>right,vcenter</align>
@@ -189,10 +193,10 @@
 	    
 	    <state name="selectedinactive" from="active">
 	      <shape name="background1" from="baseshapebackground">
-		<alpha>50</alpha>
+		<fill alpha="50" />
 	      </shape>
 	      <shape name="background2" from="baseshapetopreflection">
-		<alpha>50</alpha>
+		<fill alpha="50" />
 	      </shape>       
 	    </state>
 	    <state name="selectedactive" from="active">
@@ -209,7 +213,7 @@
 	    <state type="off">
 	      <imagetype name="up">
 		<filename>shared/uparrow.png</filename>
-		<alpha>30</alpha>
+		<fill alpha="30" />
 	      </imagetype>
 	    </state>
 	    <state type="full" from="off">
@@ -223,7 +227,7 @@
 	    <state type="off">
 	      <imagetype name="down">
 		<filename>shared/downarrow.png</filename>
-		<alpha>30</alpha>
+		<fill alpha="30" />
 	      </imagetype>
 	    </state>
 	    <state type="full" from="off">
@@ -327,8 +331,7 @@
 	  <position>850,540</position>
 	</imagetype>
 	
-	
-	
+
 	<!--  The title of a show     -->
 	<textarea name="title" from="basetextarea">
 	  <area>25,475,700,40</area>
@@ -499,29 +502,65 @@
 	<imagetype name="background" from="basepopupbackground" />
 	
 	<textarea name="label" from="basemessagearea">
-	  <area>12,15,470,160</area>
+	  <area>12,15,470,50</area>
 	  <multiline>yes</multiline>
 	  <align>allcenter</align>
 	  <value>Edit Recording Metadata</value>
 	</textarea>
 	
 	<textarea name="titlelabel" from="basetextarea">
-	  <area>58,180,300,30</area>
+	  <area>58,70,300,30</area>
 	  <value>Title:</value>
 	</textarea>
 	
 	<textedit name="title" from="basetextedit">
-	  <position>58,210</position>
+	  <position>58,90</position>
 	</textedit>
 	
 	<textarea name="subtitlelabel" from="basetextarea">
-	  <area>58,310,300,30</area>
+	  <area>58,140,300,30</area>
 	  <value>Subtitle:</value>
 	</textarea>
 	
 	<textedit name="subtitle" from="basetextedit">
-	  <position>58,340</position>
+	  <position>58,160</position>
 	</textedit>
+	
+	<textarea name="inetref_text" from="basetextarea">
+          <area>58,220,300,30</area>
+          <value>INETREF:</value>
+        </textarea>
+        
+        <textedit name="inetref" from="basetextedit">
+          <position>58,240</position>
+        </textedit>
+	
+	<textarea name="description_text" from="basetextarea">
+          <area>58,290,300,30</area>
+          <value>Description:</value>
+        </textarea>
+        
+        <textedit name="description" from="basetextedit">
+          <position>58,310</position>
+        </textedit>
+	
+	<textarea name="seaslabel" from="basetextarea">
+            <area>58,370,300,30</area>
+            <value>Season:</value>
+        </textarea>
+        
+        <spinbox name="season" from="basespinbox">
+            <position>150,370</position>
+        </spinbox>
+        
+        <textarea name="eplabel" from="basetextarea">
+            <area>250,370,300,30</area>
+            <value>Episode:</value>
+        </textarea>
+        
+        <spinbox name="episode" from="basespinbox">
+            <position>350,370</position>
+        </spinbox>
 	
 	<button name="ok" from="basebutton">
 	  <position>175,435</position>

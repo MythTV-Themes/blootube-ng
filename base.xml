@@ -87,12 +87,11 @@
     <statetype name="buttonitem">
       <state name="active">
 	<area>0,0,394,34</area>
-	
 	<shape name="background1" from="baseshapebackground">
-	  <alpha>0</alpha>
+	  <fill alpha="0" />
 	</shape>
 	<shape name="background2" from="baseshapetopreflection">
-	  <alpha>0</alpha>
+	  <fill alpha="0" />
 	</shape>
 	<textarea name="buttontext">
 	  <area>5,0,95%,34</area>
@@ -125,15 +124,15 @@
       </state>
       <state name="selectedactive" from="active">
 	<shape name="background1" from="baseshapebackground">
-	    <alphapulse min="50" max="250" change="1"/>
+	    <fill alpha="250" />
 	  </shape>
 	  <shape name="background2" from="baseshapetopreflection">
-	    <alphapulse min="50" max="250" change="1"/>
+	    <fill alpha="250" />
 	  </shape>
       </state>
       <state name="selectedinactive" from="active">
 	<imagetype name="selectbar">
-	  <alpha>50</alpha>
+	  <fill alpha="50" />
 	</imagetype>                
       </state>
     </statetype>
@@ -141,12 +140,12 @@
       <state type="off">
 	<imagetype name="up">
 	  <filename>shared/uparrow.png</filename>
-	  <alpha>30</alpha>
+	  <fill alpha="30" />
 	</imagetype>
       </state>
       <state type="full" from="off">
 	<imagetype name="up">
-	  <alpha>250</alpha>
+	  <fill alpha="250" />
 	</imagetype>
       </state>
       <position>-30,0</position>
@@ -155,12 +154,12 @@
       <state type="off">
 	<imagetype name="down">
 	  <filename>shared/downarrow.png</filename>
-	  <alpha>30</alpha>
+	  <fill alpha="30" />
 	</imagetype>
       </state>
       <state type="full" from="off">
 	<imagetype name="down">
-	  <alpha>250</alpha>
+	  <fill alpha="250" />
 	</imagetype>
       </state>
       <position>-30,30</position>
@@ -170,13 +169,13 @@
   <imagetype name="baseselectbar">
     <position>-5,-2</position>
     <filename>tvplayback/tv-lbox.png</filename>
-    <alpha>0</alpha>
+    <fill alpha="0" />
   </imagetype>
   
   <imagetype name="baseselectbarwide">
     <position>-5,-5</position>
     <filename>tvplayback/tv-selectbar.png</filename>
-    <alpha>0</alpha>
+    <fill alpha="0" />
   </imagetype>
   
   <!-- Base definition of a textarea -->
@@ -212,10 +211,10 @@
       <state name="active">
 	<area>0,0,470,34</area>
 	<shape name="background1" from="baseshapebackground">
-	  <alpha>0</alpha>
+	  <fill alpha="0" />
 	</shape>
 	<shape name="background2" from="baseshapetopreflection">
-	  <alpha>0</alpha>
+	  <fill alpha="0" />
 	</shape>
 	<textarea name="buttontext">
 	  <area>0,0,100%,34</area>
@@ -225,10 +224,10 @@
       </state>
       <state name="selectedinactive" from="active">
 	<shape name="background1" from="baseshapebackground">
-	  <alpha>50</alpha>
+	  <fill alpha="50" />
 	</shape>
 	<shape name="background2" from="baseshapetopreflection">
-	  <alpha>50</alpha>
+	  <fill alpha="50" />
 	</shape>  
       </state>
       <state name="selectedactive" from="active">

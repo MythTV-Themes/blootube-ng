@@ -189,10 +189,10 @@
 	<state name="active">
 	  <area>0,0,500,50</area>
 	  <shape name="background1" from="baseshapebackground">
-	    <alpha>0</alpha>
+	    <fill alpha="0" />
 	  </shape>
 	  <shape name="background2" from="baseshapetopreflection">
-	    <alpha>0</alpha>
+	    <fill alpha="0" />
 	  </shape>
 	  <textarea name="buttontext">
 	    <area>20,0,500,50</area>
